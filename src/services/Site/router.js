@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const musicController = require('./controller');
+const siteController = require('./controller');
 
-router.get('/', musicController.home);
+router.get('/', siteController.home);
 
 module.exports = router;
