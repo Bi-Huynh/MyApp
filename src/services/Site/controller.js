@@ -1,7 +1,7 @@
 class SiteController {
     // [get] /
     home(req, res, next) {
-        res.render('layout/main');
+        res.render('layout/site');
     }
 }
 

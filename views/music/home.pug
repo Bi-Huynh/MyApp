@@ -1,4 +1,30 @@
-extends ../layout/main.pug
+extends ../layout/site.pug
 
 block content 
-    h2 music home
+    .player
+        // Dashboard
+        .dashboard
+            // Header
+            header
+                h2 String 57th &amp; 9th
+                h4 Now playing:
+            // CD
+            .cd
+                .cd-thumb(style="background-image: url('./assets/img/dark.jpg')")
+            // Control
+            .control
+                .btn.btn-repeat
+                    i.fas.fa-redo
+                .btn.btn-prev
+                    i.fas.fa-step-backward
+                .btn.btn-toggle-play
+                    i.fas.fa-pause.icon-pause
+                    i.fas.fa-play.icon-play
+                .btn.btn-next
+                    i.fas.fa-step-forward
+                .btn.btn-random
+                    i.fas.fa-random
+            input#progress.progress(type='range' value='0' step='1' min='0' max='100')
+            audio#audio(src='')
+        // Playlist
+        .playlist
