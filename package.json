@@ -2,8 +2,9 @@
     "name": "myapp",
     "version": "1.0.0",
     "description": "��#\u0000 \u0000M\u0000y\u0000A\u0000p\u0000p\u0000\r\u0000 \u0000\r\u0000 \u0000P\u0000h\u0000�\u0000n\u0000 \u0000b\u0000�\u001e \u0000c\u0000�\u001ec\u0000 \u0000f\u0000i\u0000l\u0000e\u0000\r\u0000 \u0000s\u0000r\u0000c\u0000\r\u0000 \u0000+\u0000c\u0000o\u0000m\u0000p\u0000o\u0000n\u0000e\u0000n\u0000t\u0000s\u0000 \u0000(\u0000l\u0000�\u0000 \u0000c\u0000�\u0000c\u0000 \u0000f\u0000i\u0000l\u0000e\u0000 \u0000t\u0000h\u0000�\u001ec\u0000 \u0000t\u0000h\u0000i\u0000 \u0000c\u0000�\u0000c\u0000 \u0000c\u0000h\u0000�\u001ec\u0000 \u0000n\u0000\u0003\u0001n\u0000g\u0000 \u0000C\u0000R\u0000U\u0000D\u0000S\u0000)\u0000\r\u0000 \u0000+\u0000+\u0000U\u0000s\u0000e\u0000r\u0000 \u0000(\u0000t\u0000�\u0000n\u0000 \u0000m\u0000o\u0000d\u0000u\u0000l\u0000e\u0000)\u0000\r\u0000 \u0000",
-    "main": "index.js",
+    "main": "app.js",
     "scripts": {
+        "dev": "nodemon --inspect app.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
@@ -17,6 +18,7 @@
     },
     "homepage": "https://github.com/Bi-Huynh/MyApp#readme",
     "dependencies": {
+        "dotenv": "^8.2.0",
         "express": "^4.17.1",
         "method-override": "^3.0.0",
         "mongoose": "^5.11.18",
