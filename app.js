@@ -13,9 +13,6 @@ const port = 3000;
 app.set('view engine', 'pug');
 app.set('views', './views');
 
-app.use(express.static(path.join(__dirname, 'public')));
-// phải có thằng này để nó có thể đọc các file css img ....
-
 app.use(
     express.urlencoded({
         extended: true,
@@ -29,6 +26,9 @@ app.use(express.json());
 app.use(methodOverride('_method'));
 // override method này là để override lại các phương thức trong mongoose
 // sử dụng nó để có thể sử dụng thư viện override dùng trong soft delete (xóa mềm => không xóa hẳng đi)
+
+app.use(express.static(path.join(__dirname, 'public')));
+// phải có thằng này để nó có thể đọc các file css img ....
 
 router(app);
 

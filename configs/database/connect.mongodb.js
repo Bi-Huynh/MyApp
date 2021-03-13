@@ -5,7 +5,6 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 
 async function connect() {
-    console.log(process.env.PATH_DB);
     try {
         await mongoose.connect(process.env.PATH_DB, {
             useNewUrlParser: true,

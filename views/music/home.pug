@@ -28,3 +28,6 @@ block content
             audio#audio(src='')
         // Playlist
         .playlist
+            if songs
+                each song, index in songs
+                    include ../template/item-playlist.pug

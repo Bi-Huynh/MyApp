@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 let slug = require('mongoose-slug-generator');
 let mongooseDelete = require('mongoose-delete');
 
-const MusicSchema = new mongoose.Schema(
+const SongSchema = new mongoose.Schema(
     {
         name: String,
         singer: String,
@@ -17,9 +17,9 @@ const MusicSchema = new mongoose.Schema(
 mongoose.plugin(slug);
 
 // override lại các method để có thể xóa mềm (soft delete)
-MusicSchema.plugin(mongooseDelete, {
+SongSchema.plugin(mongooseDelete, {
     overrideMethods: 'all',
     deletedAt: true,
 });
 
-module.exports = mongoose.model('Music', MusicSchema);
+module.exports = mongoose.model('Song', SongSchema);
