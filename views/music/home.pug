@@ -6,24 +6,24 @@ block content
         .dashboard
             // Header
             header
-                h2 String 57th &amp; 9th
-                h4 Now playing:
+                h2#nameSong String 57th &amp; 9th
+                h4#nameSinger Now playing:
             // CD
             .cd
-                .cd-thumb(style="background-image: url('./assets/img/dark.jpg')")
+                .cd-thumb(style="background-image: url('/img/dark.jpg')")
             // Control
             .control
                 .btn.btn-repeat
-                    i.fas.fa-redo
+                    span.oi.oi-loop
                 .btn.btn-prev
-                    i.fas.fa-step-backward
+                    span.oi.oi-media-step-backward
                 .btn.btn-toggle-play
-                    i.fas.fa-pause.icon-pause
-                    i.fas.fa-play.icon-play
+                    span.oi.oi-media-pause.icon-pause
+                    span.oi.oi-media-play.icon-play
                 .btn.btn-next
-                    i.fas.fa-step-forward
+                    span.oi.oi-media-step-forward
                 .btn.btn-random
-                    i.fas.fa-random
+                    span.oi.oi-random
             input#progress.progress(type='range' value='0' step='1' min='0' max='100')
             audio#audio(src='')
         // Playlist

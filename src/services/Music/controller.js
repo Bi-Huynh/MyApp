@@ -8,14 +8,24 @@ class SongController {
             songs = await Songs.find({});
         } catch (err) {
             console.log(new Error(err));
+        } finally {
+            res.json(songs);
         }
-
-        res.render('music/home', {
-            songs,
-        });
     }
 
     create(req, res, next) {}
+
+    async getSong(req, res, next) {
+        let song = {};
+        let _id = req.params.id;
+        try {
+            song = await Songs.findById(_id);
+        } catch (err) {
+            console.log(new Error(err));
+        } finally {
+            res.json(song);
+        }
+    }
 }
 
 module.exports = new SongController();

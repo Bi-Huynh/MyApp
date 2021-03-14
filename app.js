@@ -2,6 +2,7 @@ const express = require('express');
 const router = require('./src/services/index.router');
 const database = require('./configs/database/connect.mongodb');
 const methodOverride = require('method-Override');
+const cors = require('cors');
 const path = require('path');
 
 const app = express();
@@ -12,7 +13,7 @@ const port = 3000;
 
 app.set('view engine', 'pug');
 app.set('views', './views');
-
+app.use(cors());
 app.use(
     express.urlencoded({
         extended: true,
