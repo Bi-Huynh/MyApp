@@ -39,7 +39,8 @@ class SongController {
         } catch (err) {
             console.log(new Error(err));
         } finally {
-            res.json(songs);
+            res.locals.songs = songs;
+            res.render('music/home');
         }
     }
 
@@ -53,7 +54,9 @@ class SongController {
         } catch (err) {
             console.log(new Error(err));
         } finally {
-            res.json(song);
+            res.render('music/home', {
+                song,
+            });
         }
     }
 }

@@ -30,4 +30,5 @@ block content
         .playlist
             if songs
                 each song, index in songs
-                    include ../template/item-playlist.pug
+                    +songItem(index, song)
+                    //- include ../template/item-playlist.pug
