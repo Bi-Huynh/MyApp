@@ -1,0 +1,33 @@
+extends ../layout/site.pug
+
+block content 
+    .player
+        // Dashboard
+        .dashboard
+            // Header
+            header
+                h2#nameSong String 57th &amp; 9th
+                h4#nameSinger Now playing:
+            // CD
+            .cd
+                .cd-thumb(style="background-image: url('/img/dark.jpg')")
+            // Control
+            .control
+                .btn.btn-repeat
+                    span.oi.oi-loop
+                .btn.btn-prev
+                    span.oi.oi-media-step-backward
+                .btn.btn-toggle-play
+                    span.oi.oi-media-pause.icon-pause
+                    span.oi.oi-media-play.icon-play
+                .btn.btn-next
+                    span.oi.oi-media-step-forward
+                .btn.btn-random
+                    span.oi.oi-random
+            input#progress.progress(type='range' value='0' step='1' min='0' max='100')
+            audio#audio(src='')
+        // Playlist
+        .playlist
+            if songs
+                each song, index in songs
+                    include ../template/item-playlist.pug
