@@ -1,5 +1,5 @@
-mixin songItem(index, song)
-    .song(data-index=index)
+mixin songItem(song, active = '')
+    a(class=`song ${active}`,href=`/music/${song.slug}`)
         img.thumb(src=song.image)
         .body
             h3.title= song.name

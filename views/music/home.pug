@@ -28,7 +28,13 @@ block content
             audio#audio(src='')
         // Playlist
         .playlist
-            if songs
-                each song, index in songs
-                    +songItem(index, song)
-                    //- include ../template/item-playlist.pug
+            if _songs
+                if _song
+                    each song in _songs
+                        if song.slug == _song.slug
+                            +songItem(song, 'active')
+                        else
+                            +songItem(song)
+                else
+                    each song in _songs
+                        +songItem(song)

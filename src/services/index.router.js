@@ -1,10 +1,9 @@
-// const musicRouter = require('./Music/router');
-import musicRouter from './Music/router.js';
-const siteRouter = require('./Site/router');
+import { router as musicRouter } from './Music/router.js';
+import { router as siteRouter } from './Site/router.js';
 
 function router(app) {
     app.use('/', siteRouter);
     app.use('/music', musicRouter);
 }
 
-exports.router = router;
+export { router };

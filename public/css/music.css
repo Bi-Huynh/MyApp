@@ -118,6 +118,10 @@ header h2 {
   padding: 12px;
 }
 
+.playlist a {
+  text-decoration: none;
+}
+
 .song {
   display: flex;
   align-items: center;
