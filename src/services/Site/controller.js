@@ -1,8 +1,5 @@
-class SiteController {
-    // [get] /
-    home(req, res, next) {
-        res.render('layout/site');
-    }
-}
+const home = (req, res, next) => {
+    res.render('layout/site');
+};
 
-module.exports = new SiteController();
+export { home };

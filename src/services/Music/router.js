@@ -1,9 +1,10 @@
-const express = require('express');
+import express from 'express';
+import { home, create, getSong } from './controller.js';
+
 const router = express.Router();
-const musicController = require('./controller');
 
-router.get('/', musicController.home);
-router.get('/create', musicController.create);
-router.get('/:id', musicController.getSong);
+router.get('/', home);
+router.get('/create', create);
+router.get('/:slug', getSong);
 
-module.exports = router;
+export { router };

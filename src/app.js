@@ -1,9 +1,17 @@
-const express = require('express');
-const router = require('./src/services/index.router');
-const database = require('./configs/database/connect.mongodb');
-const methodOverride = require('method-Override');
-const cors = require('cors');
-const path = require('path');
+// const express = require('express');
+// const router = require('./services/index.router');
+// const database = require('../configs/database/connect.mongodb');
+// const methodOverride = require('method-Override');
+// const cors = require('cors');
+// const path = require('path');
+
+import express from 'express';
+import methodOverride from 'method-Override';
+import path from 'path';
+import cors from 'cors';
+import process from 'process';
+import { router } from './services/index.router.js';
+import { database } from '../configs/database/connect.mongodb.js';
 
 const app = express();
 
@@ -13,6 +21,7 @@ const port = 3000;
 
 app.set('view engine', 'pug');
 app.set('views', './views');
+
 app.use(cors());
 app.use(
     express.urlencoded({
@@ -28,8 +37,13 @@ app.use(methodOverride('_method'));
 // override method này là để override lại các phương thức trong mongoose
 // sử dụng nó để có thể sử dụng thư viện override dùng trong soft delete (xóa mềm => không xóa hẳng đi)
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'));
 // phải có thằng này để nó có thể đọc các file css img ....
+
+process.on('warning', (warning) => {
+    console.warn(warning.name); // Print the warning name
+    console.warn(warning.message); // Print the warning message
+});
 
 router(app);
 
