@@ -1,6 +1,7 @@
 const express = require('express');
-const router = require('./src/services/index.router');
-const database = require('./configs/database/connect.mongodb');
+// const router = require('./services/index.router');
+import { router } from './services/index.router.js';
+const database = require('../configs/database/connect.mongodb');
 const methodOverride = require('method-Override');
 const cors = require('cors');
 const path = require('path');

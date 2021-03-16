@@ -1,4 +1,4 @@
-const pug = require('pug');
+import { home, getSong } from '../../../src/services/Music/controller.js';
 
 const player = $('.player');
 const btnPlay = $('.btn-toggle-play');
